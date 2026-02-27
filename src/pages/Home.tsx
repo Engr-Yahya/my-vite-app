@@ -5,23 +5,42 @@ import "../App.css";
 export function Home() {
   return (
     <>
-      <nav className="flex items-center h-[80px] max-w-[800px] mx-auto gap-4">
-        <Link to="/" className="text-2xl">
-          {" "}
-          Home Page
-        </Link>
-        <Link to="./login" className="text-2xl">
-          Login
-        </Link>
-        <Link to="./signup" className="text-2xl">
-          {" "}
-          Signup
-        </Link>
-      </nav>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
+      <div className="min-h-screen bg-[#1a222c] text-white">
+        {/* Header / Navbar */}
+        <header className="w-full bg-[#1f2937] shadow-md">
+          <div className="max-w-[900px] mx-auto h-[80px] flex items-center justify-between px-6">
+            <Link
+              to="/"
+              className="text-2xl font-bold text-white hover:text-blue-400 transition-colors"
+            >
+              MyApp
+            </Link>
+
+            <nav className="flex items-center gap-8">
+              <Link
+                to="/login"
+                className="text-lg font-medium text-gray-300 hover:text-blue-400 transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                className="text-lg font-medium text-gray-300 hover:text-blue-400 transition-colors"
+              >
+                Signup
+              </Link>
+            </nav>
+          </div>
+        </header>
+
+        {/* Main Content */}
+        <main className="flex flex-col items-center mt-10 px-4">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </main>
+      </div>
     </>
   );
 }
