@@ -19,7 +19,7 @@ export function Home() {
             <nav className="flex items-center gap-8">
               <Link
                 to="/login"
-                className="text-lg font-medium text-gray-300 hover:text-blue-400 transition-colors"
+                className="text-lg font-medium bg-blue-600 hover:bg-blue-700 !text-white px-6 py-2 rounded-lg"
               >
                 Login
               </Link>

@@ -2,7 +2,7 @@ import { Button } from "./ui/Button";
 import "../App.css";
 export function Login() {
   return (
-    <div className="max-w-sm w-full mx-auto mt-20 p-8 bg-[#232b38] rounded-xl shadow-lg shadow-black/40">
+    <div className="max-w-xl w-full mx-auto mt-20 p-8 bg-[#232b38] rounded-xl shadow-lg shadow-black/40">
       <h2 className="text-3xl font-bold mb-6 text-center text-white">Login</h2>
       <form className="space-y-5">
         {/* Email */}
