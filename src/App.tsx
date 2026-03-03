@@ -40,7 +40,7 @@ function App() {
       description,
     };
     if (error) {
-      console.log(error);
+      alert("Something Went wrong !");
       return;
     }
 
