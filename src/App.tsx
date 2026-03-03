@@ -17,7 +17,7 @@ function App() {
   };
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [books, setBooks] = useState<Book[]>([]);
+  let [books, setBooks] = useState<Book[]>([]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,6 +49,23 @@ function App() {
     setTitle("");
     setDescription("");
   };
+
+  async function fetchBooks() {
+    const { data, error } = await supabase.from("todos").select("*");
+
+    if (data) {
+      const formattedBooks: Book[] = data.map((book) => ({
+        id: book.id,
+        title: book.title,
+        description: book.description,
+      }));
+
+      setBooks(formattedBooks);
+    } else if (error) {
+      console.log(error);
+    }
+  }
+  fetchBooks();
 
   return (
     <>
